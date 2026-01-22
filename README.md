@@ -1,16 +1,16 @@
-﻿ # 🛋️ Sofa King - Premium E-Commerce Solution
+ # 🛋️ Sofa King - Premium E-Commerce Solution
 
 I developed Sofa Luxe as a high-performance, full-stack e-commerce platform featuring a modular architecture of **72+ files**. This project focuses on leveraging Firebase for real-time synchronization and high-speed local persistence to deliver a seamless user experience.
 
 ---
 
- ## 📺 Project Demo
+ ## Project Demo
 ### Video:
-> **https://youtu.be/Fb3UWDXY7J0**
+> **https://youtu.be/gpZpEtHbTvg**
 ### Link website:
 > **https://sofas-king.web.app**
 ---
-## 🤖 AI-Powered Development (AI Collaboration) I effectively leveraged Generative AI (Gemini) as a core part of my development workflow to build and refine this project:
+## AI-Powered Development (AI Collaboration) I effectively leveraged Generative AI (Gemini) as a core part of my development workflow to build and refine this project:
 
 * **Code Generation:** I worked with AI to write and structure complex JavaScript modules and Firebase integration logic.
 
@@ -19,23 +19,35 @@ I developed Sofa Luxe as a high-performance, full-stack e-commerce platform feat
 * **Logic Refactoring:** AI helped me optimize Firestore queries and local storage synchronization for better performance.
 
 * **Security Auditing:** AI assisted in drafting and testing the Firestore Security Rules to ensure data integrity.
+  
+## Social Good & Community Impact
 
- ## 🚀 Key Features
+Behind the code of Sofa King is a vision to empower small businesses and promote sustainable commerce practices:
+
+* **Supporting Local Artisans:** I designed this platform to be lightweight and easy to deploy, specifically aiming to help local furniture makers who lack the technical resources to transition from traditional markets to a professional digital storefront.
+
+* **Reducing Digital Barriers:** By optimizing the platform for high-speed performance and offline resilience (via LocalStorage), the application remains functional even for users in areas with unstable internet connections, ensuring equal access to digital services.
+
+* **Promoting Transparent Commerce:** The real-time feedback and order tracking systems are built to foster trust between sellers and buyers, reducing fraud and creating a safer online environment for the local community.
+
+* **Educational Open-Source:** I have structured this project with a modular architecture and detailed documentation to serve as a learning resource for other young students interested in full-stack development with Firebase.
+
+ ## Key Features
     
- ### 👤 Customer Experience
+ ### Customer Experience
 * **Smart Shopping Cart:** I optimized the cart using **LocalStorage** for sub-millisecond persistence and offline resilience.
 * **High-quality design:** All web pages of this website is designed to responsive, user can use it on all devices.
 * **Secure Transactional Flow:** I integrated a multi-step checkout with **Google Re-authentication** to ensure high-level security.
 * **Order Tracking:** Customers receive real-time updates on shipping status via Firestore listeners.
 
- ### 🛡️ Administrative Control
-* **Live Dashboard:** I built a management interface powered by Firestore `onSnapshot` for real-time monitoring of orders, users, and feedback.
+ ### Administrative Control
+* **Live Dashboard:** I built a management interface powered by Firestore `onSnapshot` for real-time monitoring of orders, users, and comments.
 * **Access Management:** I designed an instant account locking mechanism to mitigate fraudulent activities.
 * **Business Logic Automation:** I automated the data migration process from pending requests to official order records.
 
 ---
 
- ## 🛠 Technologies Used
+ ## Technologies Used
 
 * **Frontend:** HTML5, CSS3 (Bootstrap 5), JavaScript (ES6 Modules).
 * **Backend as a Service (BaaS):** Firebase.
@@ -46,7 +58,7 @@ I developed Sofa Luxe as a high-performance, full-stack e-commerce platform feat
 
 ---
 
- ## 🔄 System Architecture & Data Flow
+ ## System Architecture & Data Flow
 
 I designed the system using a **Modular Data Architecture** to minimize server overhead:
 
@@ -63,7 +75,7 @@ I used Firestore transactional logic for admin approvals to ensure data integrit
 
 ---
 
- ## 📂 Project Structure
+ ## Project Structure
 
 * **html**: 25 functional pages covering storefront, user profiles, and management.
 * **js**:
@@ -74,7 +86,7 @@ I used Firestore transactional logic for admin approvals to ensure data integrit
 
 ---
 
- ## 🔒 Security Standards & Firebase Rules
+ ## Security Standards & Firebase Rules
 
 I implemented strict server-side validation via **Firebase Security Rules** to ensure:
 1.  **Data Isolation:** Users can only access their own order history.
@@ -129,13 +141,14 @@ service cloud.firestore {
 }
 ```
 
- ## ⚙️ Setup & Installation
+ ## Setup & Installation
 
  ### 1. Firebase Configuration Update the API credentials in js firebase-config.js with your own project keys.
 
  ### 2. Firestore Indexing I require a Composite Index for the admin_verify collection where is_waiting == true to enable advanced administrative queries.
 
  ### 3. Local Environment This project relies on ES6 Modules. I recommend running it via a local server (e.g., VS Code Live Server) to avoid CORS issues.
-
+ 
+ ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (e.g., Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
 
 **Developed by duck.sssop0356@gmail.com I am a 14-year-old developer passionate about building scalable and secure web solutions.**
