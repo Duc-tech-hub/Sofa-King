@@ -82,6 +82,7 @@ I used Firestore transactional logic for admin approvals to ensure data integrit
     * **Security.js**: The central gatekeeper I built for session validation.
     * **Adminpanel-part1-4.js**: Modularized administration logic for easier maintenance.
     * **cart.js & pay.js**: My core transaction and total calculation engine.
+    * **Other functions**: There are 10 file javascript more linked with html to increase more functions, increase user experience.
 * **css**: Customized Bootstrap components for a premium aesthetic.
 
 ---
@@ -152,3 +153,4 @@ service cloud.firestore {
  ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (e.g., Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
 
 **Developed by duck.sssop0356@gmail.com I am a 14-year-old developer passionate about building scalable and secure web solutions.**
+
