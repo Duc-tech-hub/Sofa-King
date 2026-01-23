@@ -106,7 +106,9 @@ Moving away from a monolithic structure, I adopted an ES6 Module-based architect
 While Firestore offers onSnapshot, using it everywhere is expensive and can lead to performance bottlenecks. * The Strategy: I used a Hybrid Data Fetching approach. Critical business flows like Order Tracking utilize real-time listeners for instant feedback. For administrative actions (like Account Locking or Comment Deletion), I chose a Standard Fetch-and-Refresh flow to ensure data integrity and reduce long-lived connection overhead.
 
 #### 3. Data Integrity with Atomic Transactions
-In an e-commerce environment, a "Race Condition" (two people modifying the same data) can be fatal. * The Implementation: For the Admin Approval process, I used Firestore Transactions. When an order moves from 'pending' to 'history', the system ensures the entire operation succeeds as a single unit. If any part of the process fails, the database rolls back, preventing "ghost orders" or lost data.
+In an e-commerce environment, a "Race Condition" (two people modifying the same data) can be fatal.
+
+- The Implementation: For the Admin Approval process, I used Firestore Transactions. When an order moves from 'pending' to 'history', the system ensures the entire operation succeeds as a single unit. If any part of the process fails, the database rolls back, preventing "ghost orders" or lost data.
 ---
 
  ## Project Structure
@@ -187,3 +189,4 @@ service cloud.firestore {
  ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (e.g., Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
 
 **Developed by duck.sssop0356@gmail.com I am a 14-year-old developer passionate about building scalable and secure web solutions.**
+
