@@ -120,7 +120,7 @@ In an e-commerce environment, a "Race Condition" (two people modifying the same 
     * **cart.js & pay.js**: My core transaction and total calculation engine.
     * **Other functions***: There are 10 file javascript more linked with html to increase more functions, increase user experience.
 * **css**: Customized Bootstrap components for a premium aesthetic.
-
+📖 Read the full technical breakdown and architecture deep-dive on https://dev.to/duc_minh_5efc9fed22cc63ea/how-i-built-a-secure-72-module-e-commerce-platform-with-firebase-at-age-14-3mbd
 ---
 
  ## Security Standards & Firebase Rules
@@ -186,7 +186,8 @@ service cloud.firestore {
 
  ### 3. Local Environment This project relies on ES6 Modules. I recommend running it via a local server (e.g., VS Code Live Server) to avoid CORS issues.
  
- ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (e.g., Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
+ ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
 
 **Developed by duck.sssop0356@gmail.com I am a 14-year-old developer passionate about building scalable and secure web solutions.**
+
 
