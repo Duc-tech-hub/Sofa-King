@@ -72,6 +72,29 @@ By utilizing Firestore's listener capabilities, I made sure that any administrat
 
  ### 3. Atomic Transactions
 I used Firestore transactional logic for admin approvals to ensure data integrity when migrating records between `pending_orders` and `buying_history`.
+graph TD
+    subgraph "Client Side (Frontend)"
+        A[User/Customer] -->|Add to Cart| B(LocalStorage)
+        B -->|Checkout| C{Firebase Auth}
+        C -->|Authenticated| D[Firestore SDK]
+    end
+
+    subgraph "Security Layer"
+        D -->|Request Data| E{Firestore Security Rules}
+        E -->|Check isAdmin| F[Whitelisted Emails]
+        E -->|Check Owner| G[Resource Data]
+    end
+
+    subgraph "Backend (Firebase)"
+        E -->|Allow| H[(Cloud Firestore)]
+        H -->|onSnapshot| A
+    end
+
+    subgraph "Admin Side"
+        I[Admin Panel] -->|Manage Orders| H
+        I -->|Block User| H
+        I -->|Delete Comments| H
+    end
 
 ---
 
@@ -153,4 +176,5 @@ service cloud.firestore {
  ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (e.g., Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
 
 **Developed by duck.sssop0356@gmail.com I am a 14-year-old developer passionate about building scalable and secure web solutions.**
+
 
