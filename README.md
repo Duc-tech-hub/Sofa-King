@@ -109,6 +109,7 @@ While Firestore offers onSnapshot, using it everywhere is expensive and can lead
 In an e-commerce environment, a "Race Condition" (two people modifying the same data) can be fatal.
 
 - The Implementation: For the Admin Approval process, I used Firestore Transactions. When an order moves from 'pending' to 'history', the system ensures the entire operation succeeds as a single unit. If any part of the process fails, the database rolls back, preventing "ghost orders" or lost data.
+###### 📖 Read the full technical breakdown and architecture deep-dive on https://dev.to/duc_minh_5efc9fed22cc63ea/how-i-built-a-secure-72-module-e-commerce-platform-with-firebase-at-age-14-3mbd
 ---
 
  ## Project Structure
@@ -120,7 +121,6 @@ In an e-commerce environment, a "Race Condition" (two people modifying the same 
     * **cart.js & pay.js**: My core transaction and total calculation engine.
     * **Other functions***: There are 10 file javascript more linked with html to increase more functions, increase user experience.
 * **css**: Customized Bootstrap components for a premium aesthetic.
-📖 Read the full technical breakdown and architecture deep-dive on https://dev.to/duc_minh_5efc9fed22cc63ea/how-i-built-a-secure-72-module-e-commerce-platform-with-firebase-at-age-14-3mbd
 ---
 
  ## Security Standards & Firebase Rules
@@ -189,5 +189,6 @@ service cloud.firestore {
  ### Attention: The current directory structure is optimized for Local Server development. If you intend to deploy this project online (Firebase Hosting), please ensure you remove the /public/ prefix from all asset links (CSS, JS, Images) in your HTML files before deploying. Failing to do so will result in 404 Not Found errors for your styles and scripts, as the hosting service treats the public folder as the root directory.
 
 **Developed by duck.sssop0356@gmail.com I am a 14-year-old developer passionate about building scalable and secure web solutions.**
+
 
 
